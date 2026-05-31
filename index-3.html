@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Кызылординский Высший Медицинский Колледж — современное медицинское образование, практика, гранты и трудоустройство." />
+  <meta name="theme-color" content="#0f6fdc" />
+  <title>КВМК — Кызылординский Высший Медицинский Колледж</title>
+
+  <link rel="preconnect" href="https://images.unsplash.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <script>
+    window.tailwind = window.tailwind || {};
+    window.tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+          colors: {
+            kvmk: {
+              50: '#eef8ff',
+              100: '#d9efff',
+              200: '#bae2ff',
+              300: '#8aceff',
+              400: '#53b0ff',
+              500: '#2b90f3',
+              600: '#0f6fdc',
+              700: '#0b57b8',
+              800: '#0f4894',
+              900: '#123f78'
+            }
+          },
+          boxShadow: {
+            glow: '0 24px 90px rgba(15,111,220,.28)',
+            soft: '0 20px 70px rgba(2, 38, 80, .11)'
+          }
+        }
+      }
+    };
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased selection:bg-kvmk-200 selection:text-kvmk-900">
+  <div class="site-bg" aria-hidden="true"></div>
+
+  <header id="top" class="fixed inset-x-0 top-0 z-50 px-4 pt-4">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between rounded-full border border-white/70 bg-white/75 px-4 py-3 shadow-soft backdrop-blur-2xl lg:px-6" aria-label="Главная навигация">
+      <a href="#top" class="group flex items-center gap-3" aria-label="КВМК — главная">
+        <span class="grid h-11 w-11 place-items-center rounded-2xl bg-gradient-to-br from-kvmk-600 to-cyan-400 text-white shadow-glow transition-transform duration-300 group-hover:scale-105">
+          <i data-lucide="cross" class="h-6 w-6"></i>
+        </span>
+        <span class="leading-tight">
+          <span class="block text-sm font-black tracking-tight text-slate-950 sm:text-base">КВМК</span>
+          <span class="hidden text-xs font-semibold uppercase tracking-[.18em] text-kvmk-700 sm:block">Medical College</span>
+        </span>
+      </a>
+
+      <div class="hidden items-center gap-1 lg:flex">
+        <a class="nav-link" href="#specialties">Специальности</a>
+        <a class="nav-link" href="#about">О колледже</a>
+        <a class="nav-link" href="#admissions">Абитуриентам</a>
+        <a class="nav-link" href="#students">Студентам</a>
+        <a class="nav-link" href="#news">Новости</a>
+        <a class="nav-link" href="#contacts">Контакты</a>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <a href="#admissions" class="hidden rounded-full bg-slate-950 px-5 py-3 text-sm font-bold text-white shadow-soft transition hover:-translate-y-0.5 hover:bg-kvmk-700 sm:inline-flex">
+          Подать заявку
+        </a>
+        <button id="menuOpen" class="grid h-11 w-11 place-items-center rounded-full border border-slate-200 bg-white text-slate-900 transition hover:border-kvmk-200 hover:text-kvmk-700 lg:hidden" aria-label="Открыть меню">
+          <i data-lucide="menu" class="h-5 w-5"></i>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <div id="mobileMenu" class="fixed inset-0 z-[60] hidden bg-slate-950/55 backdrop-blur-xl lg:hidden" aria-hidden="true">
+    <div class="ml-auto flex h-full w-full max-w-md flex-col bg-white px-6 py-6 shadow-2xl">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <span class="grid h-11 w-11 place-items-center rounded-2xl bg-gradient-to-br from-kvmk-600 to-cyan-400 text-white">
+            <i data-lucide="cross" class="h-6 w-6"></i>
+          </span>
+          <div>
+            <p class="font-black">КВМК</p>
+            <p class="text-xs font-semibold uppercase tracking-[.18em] text-kvmk-700">Навигация</p>
+          </div>
+        </div>
+        <button id="menuClose" class="grid h-11 w-11 place-items-center rounded-full bg-slate-100 text-slate-900" aria-label="Закрыть меню">
+          <i data-lucide="x" class="h-5 w-5"></i>
+        </button>
+      </div>
+      <div class="mt-10 grid gap-3 text-xl font-extrabold">
+        <a class="mobile-link" href="#specialties">Специальности</a>
+        <a class="mobile-link" href="#about">О колледже</a>
+        <a class="mobile-link" href="#admissions">Абитуриентам</a>
+        <a class="mobile-link" href="#students">Студентам</a>
+        <a class="mobile-link" href="#parents">Родителям</a>
+        <a class="mobile-link" href="#news">Новости</a>
+        <a class="mobile-link" href="#gallery">Галерея</a>
+        <a class="mobile-link" href="#contacts">Контакты</a>
+      </div>
+      <a href="#admissions" class="mt-auto inline-flex items-center justify-center gap-2 rounded-3xl bg-kvmk-600 px-6 py-4 text-base font-black text-white shadow-glow transition hover:bg-kvmk-700">
+        Подать заявку <i data-lucide="arrow-right" class="h-5 w-5"></i>
+      </a>
+    </div>
+  </div>
+
+  <main>
+    <section class="relative isolate min-h-screen overflow-hidden px-4 pb-20 pt-32 sm:pt-36 lg:pt-44">
+      <div class="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_70%_20%,rgba(83,176,255,.28),transparent_34%),radial-gradient(circle_at_20%_70%,rgba(14,165,233,.18),transparent_35%)]"></div>
+      <div class="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1fr_.9fr]">
+        <div class="reveal">
+          <div class="mb-7 inline-flex items-center gap-2 rounded-full border border-kvmk-100 bg-white/70 px-4 py-2 text-sm font-bold text-kvmk-800 shadow-soft backdrop-blur-xl">
+            <span class="h-2 w-2 rounded-full bg-emerald-500 shadow-[0_0_0_6px_rgba(16,185,129,.12)]"></span>
+            Приёмная кампания 2026 открыта
+          </div>
+          <h1 class="max-w-4xl text-5xl font-black tracking-[-.055em] text-slate-950 sm:text-6xl lg:text-7xl xl:text-8xl">
+            Медицинское образование нового поколения в Кызылорде
+          </h1>
+          <p class="mt-7 max-w-2xl text-lg leading-8 text-slate-600 sm:text-xl">
+            Кызылординский Высший Медицинский Колледж готовит сильных практико-ориентированных специалистов для современной системы здравоохранения Казахстана.
+          </p>
+          <div class="mt-9 flex flex-col gap-3 sm:flex-row">
+            <a href="#admissions" class="btn-primary">Подать заявку</a>
+            <a href="#specialties" class="btn-secondary">Выбрать специальность</a>
+          </div>
+          <div class="mt-10 grid max-w-xl grid-cols-3 gap-3 text-center sm:text-left">
+            <div class="mini-proof"><b>70+</b><span>лет опыта</span></div>
+            <div class="mini-proof"><b>8</b><span>направлений</span></div>
+            <div class="mini-proof"><b>24/7</b><span>цифровой доступ</span></div>
+          </div>
+        </div>
+
+        <div class="relative reveal reveal-delay-1">
+          <div class="hero-card group">
+            <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1400&q=85" alt="Медицинские студенты на практическом занятии" class="h-[420px] w-full rounded-[2rem] object-cover sm:h-[560px]" />
+            <div class="absolute inset-0 rounded-[2rem] bg-gradient-to-t from-slate-950/55 via-slate-950/10 to-transparent"></div>
+            <div class="absolute bottom-5 left-5 right-5 rounded-[1.5rem] border border-white/35 bg-white/18 p-5 text-white shadow-2xl backdrop-blur-xl">
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <p class="text-sm font-semibold text-white/80">Симуляционный центр</p>
+                  <p class="mt-1 text-2xl font-black">Практика с первого курса</p>
+                </div>
+                <span class="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-white/20">
+                  <i data-lucide="activity" class="h-6 w-6"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="floating-card left-0 top-10 hidden sm:block">
+            <i data-lucide="stethoscope" class="h-5 w-5 text-kvmk-700"></i>
+            <span>Клиническое мышление</span>
+          </div>
+          <div class="floating-card bottom-20 right-0 hidden sm:block">
+            <i data-lucide="shield-check" class="h-5 w-5 text-emerald-600"></i>
+            <span>Профессиональные стандарты</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-4 py-14" aria-labelledby="stats-title">
+      <h2 id="stats-title" class="sr-only">Статистика колледжа</h2>
+      <div class="mx-auto grid max-w-7xl gap-4 md:grid-cols-4">
+        <article class="stat-card reveal"><span data-count="1954">0</span><p>год основания</p></article>
+        <article class="stat-card reveal reveal-delay-1"><span data-count="5000" data-suffix="+">0</span><p>студентов ежегодно</p></article>
+        <article class="stat-card reveal reveal-delay-2"><span data-count="25000" data-suffix="+">0</span><p>выпускников</p></article>
+        <article class="stat-card reveal reveal-delay-3"><span data-count="8">0</span><p>специальностей</p></article>
+      </div>
+    </section>
+
+    <section id="specialties" class="section-wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Образовательные программы</p>
+        <h2>Специальности, которые востребованы в здравоохранении</h2>
+        <p>Карточки открывают подробное описание программы, практики и карьерного трека.</p>
+      </div>
+      <div class="mx-auto grid max-w-7xl gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <button class="specialty-card reveal" data-specialty="nursing">
+          <i data-lucide="heart-pulse"></i><span>Сестринское дело</span><small>Пациент-ориентированный уход</small>
+        </button>
+        <button class="specialty-card reveal reveal-delay-1" data-specialty="medicine">
+          <i data-lucide="stethoscope"></i><span>Лечебное дело</span><small>Фельдшерская подготовка</small>
+        </button>
+        <button class="specialty-card reveal reveal-delay-2" data-specialty="midwifery">
+          <i data-lucide="baby"></i><span>Акушерское дело</span><small>Материнство и детство</small>
+        </button>
+        <button class="specialty-card reveal reveal-delay-3" data-specialty="pharmacy">
+          <i data-lucide="pill"></i><span>Фармация</span><small>Лекарственная безопасность</small>
+        </button>
+        <button class="specialty-card reveal" data-specialty="dentistry">
+          <i data-lucide="badge-plus"></i><span>Стоматология</span><small>Профилактика и ассистирование</small>
+        </button>
+        <button class="specialty-card reveal reveal-delay-1" data-specialty="lab">
+          <i data-lucide="microscope"></i><span>Лабораторная диагностика</span><small>Аналитика и биоматериалы</small>
+        </button>
+        <button class="specialty-card reveal reveal-delay-2" data-specialty="optics">
+          <i data-lucide="glasses"></i><span>Медицинская оптика</span><small>Зрение и оптические системы</small>
+        </button>
+        <button class="specialty-card reveal reveal-delay-3" data-specialty="bachelor">
+          <i data-lucide="graduation-cap"></i><span>Прикладной бакалавриат</span><small>Расширенная клиническая роль</small>
+        </button>
+      </div>
+    </section>
+
+    <section id="about" class="section-wrap">
+      <div class="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[.92fr_1.08fr] lg:items-center">
+        <div class="reveal">
+          <p class="eyebrow">О колледже</p>
+          <h2 class="section-title">История, миссия и профессиональная среда</h2>
+          <p class="mt-5 text-lg leading-8 text-slate-600">
+            КВМК — один из ключевых центров подготовки медицинских кадров региона. Колледж соединяет академическую базу, клиническую практику, наставничество и цифровые сервисы для студентов, родителей и абитуриентов.
+          </p>
+          <div class="mt-7 grid gap-4 sm:grid-cols-2">
+            <div class="glass-card p-6">
+              <i data-lucide="target" class="mb-4 h-7 w-7 text-kvmk-600"></i>
+              <h3 class="text-xl font-black">Миссия</h3>
+              <p class="mt-2 text-sm leading-6 text-slate-600">Готовить компетентных, этичных и технологически грамотных специалистов для устойчивого здравоохранения.</p>
+            </div>
+            <div class="glass-card p-6">
+              <i data-lucide="sparkles" class="mb-4 h-7 w-7 text-kvmk-600"></i>
+              <h3 class="text-xl font-black">Подход</h3>
+              <p class="mt-2 text-sm leading-6 text-slate-600">Симуляции, клинические кейсы, практика в медицинских организациях и персональная образовательная траектория.</p>
+            </div>
+          </div>
+        </div>
+        <div class="timeline reveal reveal-delay-1">
+          <div class="timeline-item"><span>1954</span><div><h3>Основание колледжа</h3><p>Старт подготовки медицинских кадров для региона.</p></div></div>
+          <div class="timeline-item"><span>1990–2000</span><div><h3>Расширение программ</h3><p>Появление новых направлений и укрепление клинических баз.</p></div></div>
+          <div class="timeline-item"><span>2015</span><div><h3>Цифровизация обучения</h3><p>Электронные журналы, цифровые материалы и обновлённые лаборатории.</p></div></div>
+          <div class="timeline-item"><span>2026</span><div><h3>Премиальная образовательная среда</h3><p>Современный кампус, проектное обучение и усиленная практика.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="admissions" class="section-wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Абитуриентам</p>
+        <h2>Поступление без лишней сложности</h2>
+        <p>Короткий маршрут: выбрать специальность, подготовить документы, пройти консультацию и подать заявку.</p>
+      </div>
+      <div class="mx-auto grid max-w-7xl gap-5 lg:grid-cols-4">
+        <article class="info-card reveal"><i data-lucide="clipboard-check"></i><h3>Правила приёма</h3><p>Конкурсный отбор проводится по установленным требованиям. Приёмная комиссия консультирует по программе, языку обучения и срокам.</p></article>
+        <article class="info-card reveal reveal-delay-1"><i data-lucide="files"></i><h3>Документы</h3><p>Удостоверение личности, документ об образовании, фото, медицинская справка и заявление установленного образца.</p></article>
+        <article class="info-card reveal reveal-delay-2"><i data-lucide="wallet-cards"></i><h3>Стоимость</h3><p>Стоимость зависит от специальности и формы обучения. Доступна поэтапная консультация по оплате и договору.</p></article>
+        <article class="info-card reveal reveal-delay-3"><i data-lucide="award"></i><h3>Гранты</h3><p>Грантовые места распределяются по актуальному плану приёма, результатам конкурса и требованиям образовательной программы.</p></article>
+      </div>
+      <div class="mx-auto mt-8 max-w-7xl rounded-[2rem] border border-kvmk-100 bg-gradient-to-br from-kvmk-700 to-sky-500 p-6 text-white shadow-glow sm:p-9 reveal">
+        <div class="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
+          <div>
+            <h3 class="text-2xl font-black sm:text-3xl">Нужна консультация по поступлению?</h3>
+            <p class="mt-2 max-w-2xl text-white/80">Оставьте контакты — приёмная комиссия подскажет оптимальную специальность и список документов.</p>
+          </div>
+          <a href="#contacts" class="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-4 font-black text-kvmk-800 transition hover:-translate-y-0.5 hover:bg-kvmk-50">Получить консультацию <i data-lucide="arrow-right" class="h-5 w-5"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="students" class="section-wrap">
+      <div class="mx-auto grid max-w-7xl gap-5 lg:grid-cols-3">
+        <article class="feature-panel reveal lg:col-span-1">
+          <p class="eyebrow">Студентам</p>
+          <h2>Цифровая и практическая среда</h2>
+          <p>Сервисы и карьерная поддержка помогают студентам видеть прогресс и быстрее входить в профессию.</p>
+        </article>
+        <article class="student-card reveal reveal-delay-1"><i data-lucide="book-open-check"></i><h3>Электронный журнал</h3><p>Оценки, посещаемость, расписание, объявления и обратная связь с преподавателями.</p></article>
+        <article class="student-card reveal reveal-delay-2"><i data-lucide="briefcase-medical"></i><h3>Практика</h3><p>Клинические базы, наставники, симуляционные занятия и практические чек-листы.</p></article>
+        <article class="student-card reveal reveal-delay-1 lg:col-start-2"><i data-lucide="handshake"></i><h3>Трудоустройство</h3><p>Партнёрские медицинские организации, карьерные консультации и подготовка к собеседованию.</p></article>
+        <article id="parents" class="student-card reveal reveal-delay-2"><i data-lucide="users-round"></i><h3>Родителям</h3><p>Доступ к информации об успеваемости, посещаемости, кураторской поддержке и психологу колледжа.</p></article>
+      </div>
+    </section>
+
+    <section id="news" class="section-wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Новости</p>
+        <h2>Жизнь колледжа</h2>
+        <p>События, достижения студентов, практические занятия и проекты партнёрства.</p>
+      </div>
+      <div class="mx-auto grid max-w-7xl gap-5 md:grid-cols-2 xl:grid-cols-3">
+        <article class="news-card reveal" data-news="simulation"><img src="https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=900&q=80" alt="Симуляционное обучение"><div><time>15 мая 2026</time><h3>Открытый день симуляционного обучения</h3><p>Студенты отработали навыки неотложной помощи на современных тренажёрах.</p></div></article>
+        <article class="news-card reveal reveal-delay-1" data-news="grant"><img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=900&q=80" alt="Студенты колледжа"><div><time>27 апреля 2026</time><h3>Консультации по грантам и поступлению</h3><p>Приёмная комиссия запустила серию встреч для выпускников школ.</p></div></article>
+        <article class="news-card reveal reveal-delay-2" data-news="lab"><img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&w=900&q=80" alt="Лаборатория"><div><time>8 апреля 2026</time><h3>Обновление лаборатории диагностики</h3><p>Учебные кабинеты получили новое оборудование для практических занятий.</p></div></article>
+        <article class="news-card reveal" data-news="career"><img src="https://images.unsplash.com/photo-1550831107-1553da8c8464?auto=format&fit=crop&w=900&q=80" alt="Врач и студент"><div><time>19 марта 2026</time><h3>Карьерная неделя КВМК</h3><p>Работодатели региона провели встречи со студентами выпускных курсов.</p></div></article>
+        <article class="news-card reveal reveal-delay-1" data-news="volunteer"><img src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=900&q=80" alt="Волонтёрство"><div><time>4 марта 2026</time><h3>Волонтёрская акция по профилактике</h3><p>Студенты провели информационную кампанию по здоровому образу жизни.</p></div></article>
+        <article class="news-card reveal reveal-delay-2" data-news="conference"><img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=900&q=80" alt="Конференция"><div><time>21 февраля 2026</time><h3>Студенческая научная конференция</h3><p>Будущие медики представили проекты по качеству ухода и диагностике.</p></div></article>
+      </div>
+    </section>
+
+    <section id="gallery" class="section-wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Галерея</p>
+        <h2>Кампус, практика и студенческая среда</h2>
+        <p>Нажмите на фото, чтобы открыть полноэкранный просмотр.</p>
+      </div>
+      <div class="gallery-grid mx-auto max-w-7xl">
+        <button class="gallery-item reveal" data-lightbox="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=1600&q=90"><img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=700&q=80" alt="Студенты в медицинской аудитории"></button>
+        <button class="gallery-item reveal reveal-delay-1" data-lightbox="https://images.unsplash.com/photo-1582719471384-894fbb16e074?auto=format&fit=crop&w=1600&q=90"><img src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?auto=format&fit=crop&w=700&q=80" alt="Медицинская лаборатория"></button>
+        <button class="gallery-item reveal reveal-delay-2" data-lightbox="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1600&q=90"><img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=700&q=80" alt="Современный медицинский кабинет"></button>
+        <button class="gallery-item reveal" data-lightbox="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=1600&q=90"><img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=700&q=80" alt="Медицинская команда"></button>
+        <button class="gallery-item reveal reveal-delay-1" data-lightbox="https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=1600&q=90"><img src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=700&q=80" alt="Медицинская практика"></button>
+        <button class="gallery-item reveal reveal-delay-2" data-lightbox="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=1600&q=90"><img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=700&q=80" alt="Обучение и консультация"></button>
+        <button class="gallery-item reveal" data-lightbox="https://images.unsplash.com/photo-1551190822-a9333d879b1f?auto=format&fit=crop&w=1600&q=90"><img src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?auto=format&fit=crop&w=700&q=80" alt="Лекционный класс"></button>
+        <button class="gallery-item reveal reveal-delay-1" data-lightbox="https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=1600&q=90"><img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=700&q=80" alt="Клиническое обучение"></button>
+      </div>
+    </section>
+
+    <section id="contacts" class="section-wrap pb-24">
+      <div class="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[.95fr_1.05fr] lg:items-start">
+        <div class="reveal">
+          <p class="eyebrow">Контакты</p>
+          <h2 class="section-title">Свяжитесь с приёмной комиссией</h2>
+          <p class="mt-5 text-lg leading-8 text-slate-600">Оставьте заявку для консультации по специальностям, документам, грантам и срокам поступления.</p>
+          <div class="mt-8 grid gap-4">
+            <div class="contact-row"><i data-lucide="map-pin"></i><div><b>Адрес</b><span>г. Кызылорда, Республика Казахстан</span></div></div>
+            <div class="contact-row"><i data-lucide="phone"></i><div><b>Телефон</b><span>+7 (7242) 00-00-00</span></div></div>
+            <div class="contact-row"><i data-lucide="mail"></i><div><b>Email</b><span>admission@kvmk.kz</span></div></div>
+            <div class="contact-row"><i data-lucide="clock-3"></i><div><b>Режим работы</b><span>Пн–Пт: 09:00–18:00</span></div></div>
+          </div>
+        </div>
+        <form id="contactForm" class="glass-card p-5 shadow-soft sm:p-8 reveal reveal-delay-1">
+          <div class="grid gap-4 sm:grid-cols-2">
+            <label class="form-field">Имя<input required name="name" type="text" placeholder="Ваше имя"></label>
+            <label class="form-field">Телефон<input required name="phone" type="tel" placeholder="+7 ___ ___ __ __"></label>
+            <label class="form-field sm:col-span-2">Email<input name="email" type="email" placeholder="example@mail.com"></label>
+            <label class="form-field sm:col-span-2">Интересующая специальность<select name="program"><option>Сестринское дело</option><option>Лечебное дело</option><option>Акушерское дело</option><option>Фармация</option><option>Стоматология</option><option>Лабораторная диагностика</option><option>Медицинская оптика</option><option>Прикладной бакалавриат</option></select></label>
+            <label class="form-field sm:col-span-2">Сообщение<textarea name="message" rows="5" placeholder="Напишите вопрос"></textarea></label>
+          </div>
+          <button class="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-slate-950 px-6 py-4 font-black text-white transition hover:-translate-y-0.5 hover:bg-kvmk-700" type="submit">
+            Отправить заявку <i data-lucide="send" class="h-5 w-5"></i>
+          </button>
+          <p class="mt-4 text-center text-xs leading-5 text-slate-500">Нажимая кнопку, вы соглашаетесь на обработку данных для обратной связи.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/70 bg-white/70 px-4 py-10 backdrop-blur-2xl">
+    <div class="mx-auto grid max-w-7xl gap-8 md:grid-cols-[1.2fr_.8fr_.8fr]">
+      <div>
+        <div class="flex items-center gap-3">
+          <span class="grid h-12 w-12 place-items-center rounded-2xl bg-gradient-to-br from-kvmk-600 to-cyan-400 text-white"><i data-lucide="cross" class="h-6 w-6"></i></span>
+          <div><p class="font-black">Кызылординский Высший Медицинский Колледж</p><p class="text-sm text-slate-500">Профессиональное медицинское образование</p></div>
+        </div>
+        <p class="mt-5 max-w-md text-sm leading-6 text-slate-600">Статический сайт готов для GitHub Pages. Все интерактивные элементы работают без сборки.</p>
+      </div>
+      <div>
+        <h3 class="font-black">Разделы</h3>
+        <div class="mt-4 grid gap-2 text-sm text-slate-600"><a href="#specialties">Специальности</a><a href="#admissions">Абитуриентам</a><a href="#students">Студентам</a><a href="#news">Новости</a></div>
+      </div>
+      <div>
+        <h3 class="font-black">Социальные сети</h3>
+        <div class="mt-4 flex gap-3">
+          <a class="social" href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+          <a class="social" href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+          <a class="social" href="#" aria-label="Youtube"><i data-lucide="youtube"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="mx-auto mt-8 max-w-7xl border-t border-slate-200 pt-6 text-sm text-slate-500">© 2026 КВМК. Все права защищены.</div>
+  </footer>
+
+  <div id="contentModal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-panel">
+      <button class="modal-close" data-close-modal aria-label="Закрыть"><i data-lucide="x"></i></button>
+      <div id="modalIcon" class="modal-icon"><i data-lucide="sparkles"></i></div>
+      <p id="modalKicker" class="eyebrow mb-3">КВМК</p>
+      <h2 id="modalTitle" class="text-3xl font-black tracking-tight text-slate-950 sm:text-4xl"></h2>
+      <p id="modalText" class="mt-4 text-base leading-7 text-slate-600"></p>
+      <div id="modalList" class="mt-6 grid gap-3"></div>
+      <button data-close-modal class="mt-8 rounded-2xl bg-slate-950 px-6 py-3 font-black text-white transition hover:bg-kvmk-700">Понятно</button>
+    </div>
+  </div>
+
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button id="lightboxClose" class="lightbox-close" aria-label="Закрыть изображение"><i data-lucide="x"></i></button>
+    <img id="lightboxImage" src="" alt="Увеличенное изображение галереи" />
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite">
+    <i data-lucide="check-circle-2"></i>
+    <div><b>Заявка отправлена</b><span>Мы свяжемся с вами в ближайшее время.</span></div>
+  </div>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
